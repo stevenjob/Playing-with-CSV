@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="csvApp">
+<head>
+    <meta charset="utf-8">
+    <title>My AngularJS CSV App</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<ul class="menu">
+    <li><a href="#/csv">Import CSV</a></li>
+    <li><a href="#/list">List of CSVs</a></li>
+</ul>
+
+<div ng-view>
+
+</div>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="import/import.js"></script>
+<script src="list/list.js"></script>
+</body>
+</html>

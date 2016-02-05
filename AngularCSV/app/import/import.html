@@ -1,0 +1,76 @@
+<!--<button ng-click="import()">Import CSV</button>-->
+<input type="file" id="input" >
+<table class="s-table">
+    <thead>
+    <tr>
+        <th class="column-header">Jan</th>
+        <th class="column-header">Feb</th>
+        <th class="column-header">Mar</th>
+        <th class="column-header">Apr</th>
+        <th class="column-header">May</th>
+        <th class="column-header">Jun</th>
+        <th class="column-header">Jul</th>
+        <th class="column-header">Aug</th>
+        <th class="column-header">Sep</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="input-group">
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.jan"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.feb"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.mar"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.apr"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.may"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.jun"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.jul"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.aug"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+        <td>
+            <div class="input-container">
+                <input type="text" ng-model="workingDaysProfile.sep"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
