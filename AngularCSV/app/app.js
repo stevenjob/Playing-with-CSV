@@ -6,6 +6,7 @@
         .module('csvApp', [
             'ngRoute',
             'csvApp.list',
-            'csvApp.import'
+            'csvApp.import',
+            'csvApp.utils'
         ]);
 })();
