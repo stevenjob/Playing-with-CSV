@@ -20,16 +20,17 @@
 
         //inputElement.addEventListener("change", handleFile, false);
 
-        function handleFile() {
-            console.log('Import happening');
+        //function handleFile() {
+        //    console.log('Import happening');
+        //
+        //    //check that its a csv file
+        //    //check that it is the correct format
+        //
+        //
+        //    //console.log(selectedFile);
+        //    //var fileList = this.files; /* now you can work with the file list */
+        //}
 
-            //check that its a csv file
-            //check that it is the correct format
-
-
-            //console.log(selectedFile);
-            //var fileList = this.files; /* now you can work with the file list */
-        }
 
 
         //$scope.import = function () {
