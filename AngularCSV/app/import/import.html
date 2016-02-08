@@ -1,15 +1,16 @@
-<csv-import
-        content="csv.content"
-        header="csv.header"
-        separator="csv.separator"
-        result="csv.result"
-        encoding="csv.encoding"></csv-import>
+<div style="flex: 1; align-self: center;">
+    <csv-import
+            content="csv.content"
+            header="csv.header"
+            separator="csv.separator"
+            result="csv.result"
+            encoding="csv.encoding"></csv-import>
 
-<button class="primary" ng-click="save()">Save the new profiles</button>
+    <button class="primary" ng-click="save()">Save the new profiles</button>
 
-<div ng-if="csv.result">
-    <table class="s-table">
-        <thead>
+    <div ng-if="csv.result">
+        <table class="s-table">
+            <thead>
             <tr>
                 <th class="column-header">Year</th>
                 <th class="column-header">Jan</th>
@@ -25,8 +26,8 @@
                 <th class="column-header">Nov</th>
                 <th class="column-header">Dec</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr ng-repeat="workingDaysProfile in csv.result">
                 <td>{{workingDaysProfile[0]}}</td>
                 <td>{{workingDaysProfile[1]}}</td>
@@ -42,7 +43,7 @@
                 <td>{{workingDaysProfile[11]}}</td>
                 <td>{{workingDaysProfile[12]}}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
-
