@@ -12,9 +12,9 @@
 
         .controller('ImportCtrl', ImportController);
 
-    ImportController.$inject = ['$scope'];
+    ImportController.$inject = ['$scope', '$http', '$q'];
 
-    function ImportController($scope) {
+    function ImportController($scope, $http, $q) {
 
         $scope.csv = {
             content: null,
@@ -24,14 +24,30 @@
             result: null
         };
 
-        $scope.csv2 = {
-            content: null,
-            header: false,
-            result: null,
-            separator: ',',
-            encoding: 'ISO-8859-1'
+        $scope.save = function () {
+            console.log($scope.csv.result);
+            saveData($scope.csv.result);
         };
 
+        var saveData = function(results) {
+            console.log(results);
+
+            var deferred = $q.defer();
+
+            $http({
+                headers:{'Content-Type': 'application/json'},
+                url: 'http://localhost:8080/csv-services',
+                method: 'POST',
+                data: angular.toJson(results)
+            })
+                .success(function(response) {
+                    deferred.resolve(response);
+                })
+                .error(function(response) {
+                    deferred.reject(response);
+                });
+            return deferred.promise;
+        }
 
     }
 
