@@ -1,76 +1,43 @@
 <!--<button ng-click="import()">Import CSV</button>-->
-<csv-import></csv-import>
-<table class="s-table">
-    <thead>
-    <tr>
-        <th class="column-header">Jan</th>
-        <th class="column-header">Feb</th>
-        <th class="column-header">Mar</th>
-        <th class="column-header">Apr</th>
-        <th class="column-header">May</th>
-        <th class="column-header">Jun</th>
-        <th class="column-header">Jul</th>
-        <th class="column-header">Aug</th>
-        <th class="column-header">Sep</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="input-group">
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.jan"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
+<csv-import
+        content="csv.content"
+        header="csv.header"
+        header-visible="csv.headerVisible"
+        separator="csv.separator"
+        separator-visible="csv.separatorVisible"
+        result="csv.result"
+        encoding="csv.encoding"
+        encoding-visible="csv.encodingVisible"
+        ></csv-import>
 
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.feb"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.mar"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.apr"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.may"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.jun"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.jul"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.aug"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-        <td>
-            <div class="input-container">
-                <input type="text" ng-model="workingDaysProfile.sep"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength="5"/>
-            </div>
-        </td>
-    </tr>
-    </tbody>
-</table>
+
+{{csv.result}}
+
+<div class=" input-container">
+Jan
+<input type="text" ng-model="workingDaysProfile.jan"/>
+</div>
+<div class="input-container">
+    Feb
+    <input type="text" ng-model="workingDaysProfile.feb"/>
+</div>
+
+<div class="input-container">
+    March
+    <input type="text" ng-model="workingDaysProfile.mar"/>
+</div>
+<div class="input-container">
+    Jan
+    <input type="text" ng-model="workingDaysProfile.apr"/>
+</div>
+
+<csv-import
+        content="csv2.content"
+        header="csv2.header"
+        header-visible="csv2.headerVisible"
+        separator="csv2.separator"
+        separator-visible="csv2.separatorVisible"
+        result="csv2.result"
+        encoding="csv2.encoding"
+        encoding-visible="csv2.encodingVisible"></csv-import>
+{{csv2.result}}
