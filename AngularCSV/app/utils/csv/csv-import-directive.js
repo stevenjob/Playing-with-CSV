@@ -53,9 +53,7 @@
                     var start = 0;
                     var columnCount = lines[0].split(content.separator).length;
 
-                    var headers = [];
                     if (content.header) {
-                        headers = lines[0].split(content.separator);
                         start = 1;
                     }
 
@@ -66,14 +64,8 @@
                         var currentline = lines[i].split(new RegExp(content.separator + '(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)'));
 
                         if (currentline.length === columnCount) {
-                            if (content.header) {
-                                for (var j = 0; j < headers.length; j++) {
-                                    obj[headers[j]] = currentline[j];
-                                }
-                            } else {
-                                for (var k = 0; k < currentline.length; k++) {
-                                    obj[k] = currentline[k];
-                                }
+                            for (var k = 0; k < currentline.length; k++) {
+                                obj[k] = currentline[k];
                             }
                             result.push(obj);
                         }
