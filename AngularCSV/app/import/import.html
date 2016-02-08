@@ -28,20 +28,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="workingDaysProfile in csv.result">
-                <td>{{workingDaysProfile[0]}}</td>
-                <td>{{workingDaysProfile[1]}}</td>
-                <td>{{workingDaysProfile[2]}}</td>
-                <td>{{workingDaysProfile[3]}}</td>
-                <td>{{workingDaysProfile[4]}}</td>
-                <td>{{workingDaysProfile[5]}}</td>
-                <td>{{workingDaysProfile[6]}}</td>
-                <td>{{workingDaysProfile[7]}}</td>
-                <td>{{workingDaysProfile[8]}}</td>
-                <td>{{workingDaysProfile[9]}}</td>
-                <td>{{workingDaysProfile[10]}}</td>
-                <td>{{workingDaysProfile[11]}}</td>
-                <td>{{workingDaysProfile[12]}}</td>
+            <tr ng-repeat="resultElement in csv.result">
+                <td>{{resultElement[0]}}</td>
+                <td>{{resultElement[1]}}</td>
+                <td>{{resultElement[2]}}</td>
+                <td>{{resultElement[3]}}</td>
+                <td>{{resultElement[4]}}</td>
+                <td>{{resultElement[5]}}</td>
+                <td>{{resultElement[6]}}</td>
+                <td>{{resultElement[7]}}</td>
+                <td>{{resultElement[8]}}</td>
+                <td>{{resultElement[9]}}</td>
+                <td>{{resultElement[10]}}</td>
+                <td>{{resultElement[11]}}</td>
+                <td>{{resultElement[12]}}</td>
             </tr>
             </tbody>
         </table>
