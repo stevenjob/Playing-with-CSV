@@ -5,7 +5,8 @@
     angular
         .module('csvApp', [
             'ngRoute',
-            'csvApp.list',
+            'ngCsv',
+            'csvApp.export',
             'csvApp.import',
             'csvApp.utils'
         ]);

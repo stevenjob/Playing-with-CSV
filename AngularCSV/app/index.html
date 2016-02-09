@@ -7,20 +7,20 @@
 </head>
 <body>
 <ul class="menu">
-    <li><a href="#/import">Import CSV</a></li>
-    <li><a href="#/list">List of CSVs</a></li>
+    <li><a href="#/import">Import CSVs</a></li>
+    <li><a href="#/export">Export CSVs</a></li>
 </ul>
 
 <div ng-view style="flex-direction: column; display: flex;">
 </div>
-<!-- In production use:
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
--->
+
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="app.js"></script>
 <script src="import/import.js"></script>
-<script src="list/list.js"></script>
+<script src="export/export.js"></script>
 <script src="utils/csv/csv-import-directive.js"></script>
+<script src="libs/ng-csv.js"></script>
 </body>
 </html>
