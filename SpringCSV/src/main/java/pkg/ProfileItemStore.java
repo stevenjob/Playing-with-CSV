@@ -9,7 +9,7 @@ enum ProfileItemStore {
     INSTANCE;
 
     private static ArrayList<ProfileItem> list = new ArrayList<>(
-            Arrays.asList(new ProfileItem(2015, 20, 20, 20, 2, 2, 2, 2, 2, 12, 2, 2, 3), new ProfileItem(2014, 10, 9, 4, 23, 22, 21, 23, 24, 12, 2, 2, 3))
+            Arrays.asList(new ProfileItem(2010, 20, 20, 20, 2, 2, 2, 2, 2, 12, 2, 2, 3), new ProfileItem(2009, 10, 9, 4, 23, 22, 21, 23, 24, 12, 2, 2, 3))
     );
 
     public int addItem(ProfileItem item) {

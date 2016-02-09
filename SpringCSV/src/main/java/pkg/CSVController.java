@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:8000")
 @RestController
+@CrossOrigin(origins = "http://localhost:8000")
 @RequestMapping("/csv-services")
 public class CSVController {
 

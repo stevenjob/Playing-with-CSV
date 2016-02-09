@@ -26,7 +26,13 @@
 
         $scope.save = function () {
             console.log($scope.csv.result);
-            saveData($scope.csv.result);
+            saveData($scope.csv.result)
+                .then(function(data) {
+                    console.log('ok', data);
+                    updateResults();
+                }, function (response) {
+                    console.log('problem',response.message)
+                });
         };
 
         var saveData = function (results) {
@@ -42,13 +48,45 @@
             })
                 .success(function (response) {
                     deferred.resolve(response);
+
+                })
+                .error(function (response) {
+                    deferred.reject(response);
+                });
+
+            return deferred.promise;
+        };
+
+        $scope.results = null;
+
+        var getResults = function () {
+
+            var deferred = $q.defer();
+
+            $http({
+                headers: {'Content-Type': 'application/json'},
+                url: 'http://localhost:8080/csv-services',
+                method: 'GET'
+            })
+                .success(function (response) {
+                    deferred.resolve(response);
                 })
                 .error(function (response) {
                     deferred.reject(response);
                 });
             return deferred.promise;
-        }
+        };
 
+        function updateResults () {
+            getResults()
+                .then(function(data) {
+                    console.log(data);
+                    $scope.results = data;
+                }, function (response) {
+                    console.log('problem',response.message)
+                });
+        }
+        updateResults();
     }
 
 })();
