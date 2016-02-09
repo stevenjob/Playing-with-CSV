@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('csvApp.import', ['ngRoute'])
@@ -10,11 +10,11 @@
             });
         }])
 
-        .controller('ImportCtrl', ImportController);
+        .controller('ImportCtrl', importController);
 
-    ImportController.$inject = ['$scope', '$http', '$q'];
+    importController.$inject = ['$scope', '$http', '$q'];
 
-    function ImportController($scope, $http, $q) {
+    function importController($scope, $http, $q) {
 
         $scope.csv = {
             content: null,
@@ -29,21 +29,21 @@
             saveData($scope.csv.result);
         };
 
-        var saveData = function(results) {
+        var saveData = function (results) {
             console.log(results);
 
             var deferred = $q.defer();
 
             $http({
-                headers:{'Content-Type': 'application/json'},
+                headers: {'Content-Type': 'application/json'},
                 url: 'http://localhost:8080/csv-services',
                 method: 'POST',
                 data: angular.toJson(results)
             })
-                .success(function(response) {
+                .success(function (response) {
                     deferred.resolve(response);
                 })
-                .error(function(response) {
+                .error(function (response) {
                     deferred.reject(response);
                 });
             return deferred.promise;

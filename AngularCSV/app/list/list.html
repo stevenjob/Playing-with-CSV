@@ -1,1 +1,38 @@
-<p>Put stuff here</p>
+<div style="flex: 1; align-self: center;">
+    <table class="s-table">
+        <thead>
+        <tr>
+            <th class="column-header">Year</th>
+            <th class="column-header">Jan</th>
+            <th class="column-header">Feb</th>
+            <th class="column-header">Mar</th>
+            <th class="column-header">Apr</th>
+            <th class="column-header">May</th>
+            <th class="column-header">Jun</th>
+            <th class="column-header">Jul</th>
+            <th class="column-header">Aug</th>
+            <th class="column-header">Sep</th>
+            <th class="column-header">Oct</th>
+            <th class="column-header">Nov</th>
+            <th class="column-header">Dec</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="resultElement in results">
+            <td>{{resultElement[0]}}</td>
+            <td>{{resultElement[1]}}</td>
+            <td>{{resultElement[2]}}</td>
+            <td>{{resultElement[3]}}</td>
+            <td>{{resultElement[4]}}</td>
+            <td>{{resultElement[5]}}</td>
+            <td>{{resultElement[6]}}</td>
+            <td>{{resultElement[7]}}</td>
+            <td>{{resultElement[8]}}</td>
+            <td>{{resultElement[9]}}</td>
+            <td>{{resultElement[10]}}</td>
+            <td>{{resultElement[11]}}</td>
+            <td>{{resultElement[12]}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

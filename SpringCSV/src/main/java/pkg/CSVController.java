@@ -5,31 +5,32 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:8000")
 @RestController
 @RequestMapping("/csv-services")
 public class CSVController {
+
+
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     List<ProfileItem> getAllWorkingDaysProfiles() {
 
-        return ProfileItemStore.getItems();
+        return ProfileItemStore.INSTANCE.getItems();
     }
 
     @RequestMapping(value = "/{" + "id" + "}", method = RequestMethod.GET)
     public @ResponseBody ProfileItem getWorkingDaysProfile(@PathVariable("id") long id) {
-        return ProfileItemStore.getItemById(id);
+        return ProfileItemStore.INSTANCE.getItemById(id);
     }
-
 
     @RequestMapping(value = "/{" + "id" + "}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.OK)
     public @ResponseBody void deleteWorkingDaysProfile(@PathVariable("id") long id) {
 
-        ProfileItemStore.deleteById(id);
+        ProfileItemStore.INSTANCE.deleteById(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
@@ -37,6 +38,6 @@ public class CSVController {
 
         profiles.forEach(System.out::println);
 
-        return ProfileItemStore.addItems(profiles);
+        return ProfileItemStore.INSTANCE.addItems(profiles);
     }
 }
