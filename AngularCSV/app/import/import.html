@@ -1,13 +1,15 @@
 <div style="flex: 1; align-self: center;">
-    <csv-import
-            content="csv.content"
-            header="csv.header"
-            separator="csv.separator"
-            result="csv.result"
-            encoding="csv.encoding"></csv-import>
+    <div>
+        <csv-import
+                content="csv.content"
+                header="csv.header"
+                separator="csv.separator"
+                result="csv.result"
+                encoding="csv.encoding"></csv-import>
 
-    <button class="primary" ng-click="save()">Store the new Results</button>
-
+        <button class="primary" ng-click="save()">Store the new Results</button>
+    </div>
+    <hr style="border: 1px solid #f4f4f4; margin: 20px 0;"/>
     <div ng-if="csv.result">
         <h2>Do you want to store these new results?</h2>
         <table class="s-table">

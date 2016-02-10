@@ -19,11 +19,23 @@
             return ['Year', 'jan', 'feb', 'march', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
         };
 
+        $scope.getFilename = function () {
+
+            var date = new Date();
+            function pad(s) { return (s < 10) ? '0' + s : s; }
+            return 'profile'+ '_' + [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('-') + '_' + date.toTimeString().slice(0,5).replace(':', '-') + ".csv";
+        };
+
         $scope.getResultsForExport = function () {
-            return $scope.results.map(function(obj){
-                delete obj.id;
-                return obj;
-            });
+
+            if ($scope.results) {
+                return $scope.results.map(function(obj){
+                    delete obj.id;
+                    return obj;
+                });
+            } else {
+                console.log("Throw error as there are no results");
+            }
         };
 
         $scope.results = null;
