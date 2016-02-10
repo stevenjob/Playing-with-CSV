@@ -17,11 +17,10 @@
     function importController($scope, $http, $q) {
 
         $scope.csv = {
-            content: null,
             header: true,
             separator: ',',
-            encoding: 'ISO-8859-1',
-            result: null
+            result: null,
+            error: null
         };
 
         $scope.save = function () {

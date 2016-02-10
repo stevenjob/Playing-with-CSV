@@ -1,14 +1,15 @@
 <div style="flex: 1; align-self: center;">
+
     <div>
         <csv-import
-                content="csv.content"
                 header="csv.header"
                 separator="csv.separator"
                 result="csv.result"
-                encoding="csv.encoding"></csv-import>
+                error="csv.error"></csv-import>
 
         <button class="primary" ng-click="save()" ng-show="csv.result">Store the new Results</button>
         <button class="primary" ng-click="deleteAll()" ng-show="results.length">Delete all stored Results</button>
+        <p ng-show="csv.error">{{csv.error}}</p>
     </div>
     <hr style="border: 1px solid #f4f4f4; margin: 20px 0;"/>
     <div ng-if="csv.result">

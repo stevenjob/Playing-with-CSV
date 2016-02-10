@@ -11,16 +11,18 @@
             template: '<input type="file" id="input">',
             restrict: 'EA',
             scope: {
-                content: '=?',
+                content: '=?',//optional binding
                 header: '=?',
-                result: '=?',
+                result: '=',
                 encoding: '=?',
-                separator: '=?'
+                separator: '=?',
+                error: '=?'
             },
             link: function (scope, element) {
                 element.on('change', function (onChangeEvent) {
                     var reader = new FileReader();
                     scope.filename = onChangeEvent.target.files[0].name;
+
                     reader.onload = function (onLoadEvent) {
                         scope.$apply(function () {
                             var content = {
@@ -29,12 +31,18 @@
                                 separator: scope.separator
                             };
                             scope.content = content.csv;
-                            scope.result = csvToJSON(content);
+
+                            if (scope.filename && scope.filename.substr(-4) != ".csv") {
+                                scope.result = null;
+                                scope.error = "Not a CSV file, must end with .csv";
+                            } else {
+                                scope.result = csvToJSON(content);
+                            }
                         });
                     };
 
                     if ((onChangeEvent.target.type === "file") && (onChangeEvent.target.files != null || onChangeEvent.srcElement.files != null)) {
-                        reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0], scope.encoding);
+                        reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0], scope.encoding || 'ISO-8859-1');
                     } else {
                         if (scope.content != null) {
                             var content = {
@@ -42,7 +50,12 @@
                                 header: !scope.header,
                                 separator: scope.separator
                             };
-                            scope.result = csvToJSON(content);
+                            if (scope.filename && scope.filename.substr(-4) != ".csv") {
+                                scope.result = null;
+                                scope.error = "Not a CSV file, must end with .csv";
+                            } else {
+                                scope.result = csvToJSON(content);
+                            }
                         }
                     }
                 });
