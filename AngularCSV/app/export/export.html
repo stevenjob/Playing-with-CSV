@@ -1,6 +1,10 @@
 <div style="flex: 1; align-self: center;">
 
-    <button ng-csv="getResultsForExport()" csv-header="getHeader()" filename="{{getFilename()}}">Export all the Results</button>
+
+    <button ng-csv="getResultsForExport()"  csv-header="getHeader()" ng-show="results.length" filename="{{getFilename()}}">
+        Export all the Results
+    </button>
+
     <hr style="border: 1px solid #f4f4f4; margin: 20px 0;"/>
     <h2>Results stored</h2>
     <table class="s-table">

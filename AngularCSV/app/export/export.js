@@ -15,6 +15,8 @@
     exportController.$inject = ['$scope', '$http', '$q'];
 
     function exportController($scope, $http, $q) {
+
+        $scope.results = null;
         $scope.getHeader = function () {
             return ['Year', 'jan', 'feb', 'march', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
         };
@@ -38,7 +40,7 @@
             }
         };
 
-        $scope.results = null;
+
 
         var getResults = function () {
 
@@ -61,7 +63,6 @@
         function updateResults() {
             getResults()
                 .then(function (data) {
-                    console.log(data);
                     $scope.results = data;
                 }, function (response) {
                     console.log('problem', response.message)

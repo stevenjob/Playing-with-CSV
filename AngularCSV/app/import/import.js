@@ -25,10 +25,8 @@
         };
 
         $scope.save = function () {
-            console.log($scope.csv.result);
             saveData($scope.csv.result)
-                .then(function(data) {
-                    console.log('ok', data);
+                .then(function() {
                     updateResults();
                 }, function (response) {
                     console.log('problem',response.message)
@@ -57,7 +55,7 @@
             return deferred.promise;
         };
 
-        $scope.results = null;
+        $scope.results = [];
 
         var getResults = function () {
 
@@ -87,6 +85,32 @@
                 });
         }
         updateResults();
+
+        $scope.deleteAll = function () {
+            deleteAllData($scope.csv.result)
+                .then(function() {
+                    updateResults();
+                }, function (response) {
+                    console.log('problem',response.message)
+                });
+        };
+
+        var deleteAllData = function () {
+            var deferred = $q.defer();
+
+            $http({
+                headers: {'Content-Type': 'application/json'},
+                url: 'http://localhost:8080/csv-services',
+                method: 'DELETE'
+            })
+                .success(function (response) {
+                    deferred.resolve(response);
+                })
+                .error(function (response) {
+                    deferred.reject(response);
+                });
+            return deferred.promise;
+        }
     }
 
 })();

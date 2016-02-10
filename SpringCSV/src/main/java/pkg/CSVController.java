@@ -16,25 +16,32 @@ public class CSVController {
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
-    List<ProfileItem> getAllWorkingDaysProfiles() {
+    List<ProfileItem> getAllProfiles() {
 
         return ProfileItemStore.INSTANCE.getItems();
     }
 
     @RequestMapping(value = "/{" + "id" + "}", method = RequestMethod.GET)
-    public @ResponseBody ProfileItem getWorkingDaysProfile(@PathVariable("id") long id) {
+    public @ResponseBody ProfileItem getProfile(@PathVariable("id") long id) {
         return ProfileItemStore.INSTANCE.getItemById(id);
     }
 
     @RequestMapping(value = "/{" + "id" + "}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.OK)
-    public @ResponseBody void deleteWorkingDaysProfile(@PathVariable("id") long id) {
+    public @ResponseBody void deleteProfile(@PathVariable("id") long id) {
 
         ProfileItemStore.INSTANCE.deleteById(id);
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseStatus(value = HttpStatus.OK)
+    public @ResponseBody void deleteProfiles() {
+
+        ProfileItemStore.INSTANCE.deleteAll();
+    }
+
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
-    public @ResponseBody boolean addWorkingDaysProfiles(@Valid @RequestBody List<ProfileItem> profiles, BindingResult result) {
+    public @ResponseBody boolean addProfiles(@Valid @RequestBody List<ProfileItem> profiles, BindingResult result) {
 
         profiles.forEach(System.out::println);
 

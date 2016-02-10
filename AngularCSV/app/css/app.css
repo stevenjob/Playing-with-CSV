@@ -7,9 +7,12 @@ tr th, tr td {
     /* margin-bottom: 10px; */
 }
 
+body {
+    font-family: Helvetica;
+}
+
 table {
     border-collapse: collapse;
-    font-family: Helvetica;
     border-spacing: 2px;
     border-color: grey;
 }
