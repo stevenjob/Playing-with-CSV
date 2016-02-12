@@ -73,8 +73,20 @@
                     for (var i = start; i < lines.length; i++) {
                         var obj = {};
 
-                        //split at separator unless there is a non-closing speech mark
-                        var currentline = lines[i].split(new RegExp(content.separator + '(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)'));
+                        //the below regex splits at separator only if is not followed by an odd number of ".
+
+                        //attempted explanation:
+                        // (?!   stuff goes here       ) - negative lookahead  - if anything in the group matches then result is discarded
+                        // [^"] - match any none " char
+                        // * - 0 or more
+                        // (?:   stuff goes here       ) - non capture group - groups tokens together
+
+                        var currentline = lines[i].split(new RegExp(content.separator +
+                            '(?!' +
+                            '[^"]*"' +
+                            '(?:(?:[^"]*"){2})*' +
+                            '[^"]*' +
+                            '$)'));
 
                         if (currentline.length === columnCount) {
                             for (var k = 0; k < currentline.length; k++) {
