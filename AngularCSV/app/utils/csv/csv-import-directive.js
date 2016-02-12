@@ -32,27 +32,27 @@
                             };
                             scope.content = content.csv;
 
-                            if (scope.filename && scope.filename.substr(-4) != ".csv") {
+                            if (scope.filename && scope.filename.substr(-4) != '.csv') {
                                 scope.result = null;
-                                scope.error = "Not a CSV file, must end with .csv";
+                                scope.error = 'Not a CSV file, must end with .csv';
                             } else {
                                 scope.result = csvToJSON(content);
                             }
                         });
                     };
 
-                    if ((onChangeEvent.target.type === "file") && (onChangeEvent.target.files != null || onChangeEvent.srcElement.files != null)) {
+                    if ((onChangeEvent.target.type === 'file') && (onChangeEvent.target.files !== null || onChangeEvent.srcElement.files !== null)) {
                         reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0], scope.encoding || 'ISO-8859-1');
                     } else {
-                        if (scope.content != null) {
+                        if (scope.content !== null) {
                             var content = {
                                 csv: scope.content,
                                 header: !scope.header,
                                 separator: scope.separator
                             };
-                            if (scope.filename && scope.filename.substr(-4) != ".csv") {
+                            if (scope.filename && scope.filename.substr(-4) !== '.csv') {
                                 scope.result = null;
-                                scope.error = "Not a CSV file, must end with .csv";
+                                scope.error = 'Not a CSV file, must end with .csv';
                             } else {
                                 scope.result = csvToJSON(content);
                             }
