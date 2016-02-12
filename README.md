@@ -6,6 +6,6 @@ Frontend built using angular.
 
 Importing done with custom angular directive.
 
-Exporting done with [ngCSV]. (https://github.com/asafdav/ng-csv)
+Exporting done with [ngCSV] (https://github.com/asafdav/ng-csv).
 
 Backend uses Spring Boot and doesnt really do much. 
