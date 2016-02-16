@@ -25,7 +25,7 @@
 
             var date = new Date();
             function pad(s) { return (s < 10) ? '0' + s : s; }
-            return 'profile'+ '_' + [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('-') + '_' + date.toTimeString().slice(0,5).replace(':', '-') + ".csv";
+            return 'profile'+ '_' + [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('-') + '_' + date.toTimeString().slice(0,5).replace(':', '-') + '.csv';
         };
 
         $scope.getResultsForExport = function () {
