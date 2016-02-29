@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('application.utilities.csvImport', [])
+        .module('csvApp.utils', [])
         .directive('csvImport', csvImport);
 
     function csvImport() {
