@@ -18,7 +18,7 @@
 
         $scope.results = null;
         $scope.getHeader = function () {
-            return ['Year', 'jan', 'feb', 'march', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
+            return ['year', 'jan', 'feb', 'march', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
         };
 
         $scope.getFilename = function () {
@@ -36,7 +36,7 @@
                     return obj;
                 });
             } else {
-                console.log("Throw error as there are no results");
+                console.log('Throw error as there are no results');
             }
         };
 
